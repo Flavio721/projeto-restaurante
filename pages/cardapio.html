@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cardápio</title>
+    <link rel="shortcut icon" href="imagens/logo.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="/estilos/style2.css">
+  </head>
+  <body>
+    <nav class="menu fixed-top">
+        <img src="/imagens/logo.png" alt="" class="item1" height="100px">
+        <a href="/sobre" class="item2">Sobre nós</a>
+        <a href="/contato" class="item3">Contato</a>
+        <a href="/reserva" class="item4">
+            <button class="animated-button">
+            <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                <path
+                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                ></path>
+            </svg>
+            <span class="text">Reserva</span>
+            <span class="circle"></span>
+            <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                <path
+                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                ></path>
+            </svg>
+            </button>
+        </a>
+        <button class="item5 btn btn-light" data-bs-target="#modalAdmin" data-bs-toggle="modal">Administração</button>
+    </nav>
+
+    <main>
+        <h2 class="titulo">Entradas</h2>
+        <div class="container">
+            <div class="card1">
+                <div class="card" style="width: 300px;">
+                    <img src="imagens/pao.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Cestinha de Pão Artesanal com Patês</h5>
+                        <p class="card-text">Uma seleção de pães artesanais fresquinhos, servidos com patês caseiros de ervas, alho assado e tomate seco. Perfeita para começar a refeição com um toque rústico e acolhedor.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card2">
+                <div class="card" style="width: 300px;">
+                    <img src="imagens/pastel.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Mini Pastéis de Carne e Queijo</h5>
+                    <p class="card-text">Pastéis crocantes e dourados, recheados com carne temperada ou queijo derretido. Servidos em porção ideal para compartilhar. Um clássico brasileiro que agrada a todos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card3">
+                <div class="card" style="width: 300px;">
+                    <img src="imagens/bolinho.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Bolinho de Aipim com Carne Seca</h5>
+                    <p class="card-text">Deliciosos bolinhos de massa de mandioca macia, recheados com carne seca desfiada e temperada no ponto certo. Crocantes por fora, cremosos por dentro. Um sabor típico e inesquecível.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ENTRADAS -->
+         <h2 class="titulo">Pratos principais</h2>
+         <div class="container2">
+            <div class="ent1">
+                <div class="card" style="width: 300px;">
+                    <img src="imagens/file.png" class="card-img-top" alt="..." height="300px"> 
+                    <div class="card-body">
+                        <h5 class="card-title">Filé à Parmegiana com Arroz e Batata Rústica</h5>
+                        <p class="card-text">Clássico e reconfortante, nosso filé à parmegiana é preparado com carne macia empanada, coberta com molho de tomate caseiro e queijo gratinado. Acompanha arroz branco soltinho e batatas rústicas assadas com ervas. Uma combinação perfeita para quem busca sabor e tradição.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ent2">
+                <div class="card" style="width: 300px;">
+                    <img src="imagens/frango.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Frango Cremoso ao Molho de Mostarda e Mel</h5>
+                    <p class="card-text">Cubos de frango grelhados servidos com um molho suave e equilibrado de mostarda e mel, que realça o sabor da carne sem pesar. Acompanha arroz integral ou branco e legumes salteados. Um prato leve, sofisticado e cheio de personalidade.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ent3">
+                <div class="card" style="width: 300px;">
+                    <img src="imagens/lasanha.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Lasanha Artesanal de Bolonhesa ou Vegetariana</h5>
+                    <p class="card-text">Camadas generosas de massa fresca intercaladas com molho bolonhesa feito com carne moída bem refogada ou, na versão vegetariana, um delicioso ragù de legumes com ervas. Finalizada com molho branco e queijo gratinado. Um prato clássico preparado com atenção aos detalhes.</p>
+                    </div>
+                </div>
+            </div>
+         </div>
+
+         <!-- SOBREMESAS -->
+          <h2 class="titulo">Sobremesas</h2>
+          <div class="container3">
+            <div class="sbr1">
+                <div class="card" style="width: 300px;">
+                    <img src="imagens/pudim.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Pudim de Leite Caseorp</h5>
+                    <p class="card-text">A cremosidade perfeita que derrete na boca, com sabor autêntico de leite condensado e uma generosa calda de caramelo dourado. O clássico que conforta.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sbr2">
+                <div class="card" style="width: 300px;">
+                    <img src="imagens/torta.png" class="card-img-top" alt="..."> 
+                    <div class="card-body">
+                    <h5 class="card-title">Torta de Limão com Merengue</h5>
+                    <p class="card-text">Uma torta refrescante com base crocante, recheio de limão levemente ácido e um irresistível merengue suíço maçaricado. Doçura e frescor na medida certa.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sbr3">
+                <div class="card" style="width: 300px;">
+                    <img src="imagens/brownie.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Brownie da Casa com Sorvete</h5>
+                    <p class="card-text">Nosso brownie fudgy e quentinho, servido com uma bola de sorvete de creme. Uma combinação perfeita de quente e frio, crocante e cremoso, com calda a gosto.</p>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+          <!-- MODAL -->
+        <div class="modal fade" id="modalAdmin" tabindex="-1" aria-labelledby="modalAdminLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="modalCancelarLabel">Login - Administração</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+           <form id="formAdmin" class="modal-content" method="POST">
+                <label for="inome" class="form-label">Nome</label>
+                <input type="text" name="Nome" id="inome" class="form-control" required>
+
+                <label for="isobre" class="form-label">Sobrenome</label>
+                <input type="text" name="Sobrenome" id="isobre" class="form-control" required>
+
+                <label for="iemail" class="form-label">Email</label>
+                <input type="email" name="email" id="iemail" class="form-control" required>
+
+                <label for="isenha" class="form-label">Senha</label>
+                <input type="password" name="senha" id="isenha" class="form-control" required>
+           </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" id="btnEntrar" class="btn btn-primary">Entrar</button>
+        </div>
+        </div>
+    </div>
+    </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('btnEntrar').addEventListener('click', async function(){
+            event.preventDefault();
+            const nome = document.getElementById('inome');
+            const sobrenome = document.getElementById('isobre');
+            const email = document.getElementById('iemail');
+            const senha = document.getElementById('isenha');
+
+            if(!nome || !sobrenome || !email || !senha){
+            alert('Preencha todos os campos');
+        }
+
+       const res = await fetch('/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+             },
+            body: JSON.stringify({
+                email: email.value,
+                password: senha.value
+            })
+        })
+        
+        const data = await res.json();
+
+        if(data.token){
+            localStorage.setItem("token", data.token);
+            window.location.href = "admin.html";
+        }        
+        const modal = bootstrap.Modal.getInstance(document.getElementById('modalAdmin'))
+        modal.hide()
+        })
+    </script>
+  </body>
+</html>

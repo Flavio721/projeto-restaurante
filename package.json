@@ -1,0 +1,20 @@
+{
+  "name": "restaurante",
+  "version": "1.0.0",
+  "description": "Projeto Node.js",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js"
+  },
+  "author": "Flavio",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.22.1"
+  },
+  "devDependencies": {
+    "prisma": "^5.22.0"
+  }
+}

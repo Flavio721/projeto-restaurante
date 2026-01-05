@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Administração</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="/estilos/style6.css">
+  </head>
+  <body>
+    <nav class="menu fixed-top">
+        <img src="/imagens/logo.png" alt="" class="item1" height="80px">
+        <a href="/cardapio" class="item2">Cardápio</a>
+        <a href="/contato" class="item3">Contato</a>
+        <a href="/reserva" class="item4"><button type="button" class="btn btn-light" style="border: 1px solid black;">Fazer reserva</button></a>
+    </nav>
+    <main>
+      <div class="esquerda" id="esquerda">
+        <h2>Reservas marcadas</h2>
+          <div id="reservas">
+
+          </div>
+      </div> 
+      <div class="direita">
+          <h2>Adicionar novos pratos</h2>
+          <button class="btn btn-primary" data-bs-target="#modalAdicionar" data-bs-toggle="modal">Adicionar</button>
+      </div>
+      <div class="modal fade" id="modalAdicionar" tabindex="-1" aria-labelledby="modalAdicionarLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="modalCancelarLabel">Adicionar prato</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+           <form id="formCancelarReserva" class="modal-content" method="POST">
+                <label for="inome" class="form-label">Nome do prato</label>
+                <input type="text" name="nome" id="inome" class="form-control" required>
+
+                <label for="ivalor" class="form-label">Valor do prato</label>
+                <input type="number" name="valor" id="ivalor" class="form-control" required>
+
+                <label for="idesc" class="form-label">Descrição do prato</label>
+                <input type="text" name="descricao" id="idesc" class="form-control" required>
+           </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" id="btnAdicionar" class="btn btn-primary">Adicionar</button>
+        </div>
+        </div>
+    </div>
+    </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script>
+      document.getElementById('btnAdicionar').addEventListener('click', async function(){
+        event.preventDefault();
+        const nome = document.getElementById('inome');
+        const valor = document.getElementById('ivalor');
+        const descricao = document.getElementById('idesc');
+
+        const res = await fetch('/api/createPrato', {
+          method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+             },
+            body: JSON.stringify({
+                name: nome.value,
+                value: valor.value,
+                desc: descricao.value
+            })
+        })
+        const dados = await res.json()
+        
+        if(dados.message === "Prato cadastrado com sucesso"){
+          alert("Prato cadastrado!")
+        }
+        else{
+          console.log(dados.message);
+        }
+        const modal = bootstrap.Modal.getInstance(document.getElementById('modalAdicionar'))
+        modal.hide()
+      })
+      const boxReservas = document.getElementById('reservas');
+      const boxLeft = document.getElementById('esquerda');
+
+      document.addEventListener('DOMContentLoaded', async () => {
+        const res = await fetch("/api/search")
+
+        if (!res.ok) {
+          console.error("Erro ao buscar reservas");
+          return;
+        }
+        const dados = await res.json();
+
+        if (!Array.isArray(dados)) {
+          console.error("Resposta não é uma lista", dados);
+          return;
+        }
+
+        dados.forEach(reserva => {
+            const card = document.createElement('div');
+
+            const nome = document.createElement('h3');
+            nome.textContent = `Nome: ${reserva.nome}`;
+          
+            const info = document.createElement('div');
+            info.classList.add('info')
+
+            const data = document.createElement('p');
+            data.textContent = `Data: ${reserva.data}`;
+            data.classList.add('data');
+
+            const horario = document.createElement('p');
+            horario.textContent = `Horario: ${reserva.horario}`;
+            horario.classList.add('horario');
+
+            info.append(data, horario);
+            card.append(nome, info);
+            boxReservas.appendChild(card);
+          });
+          boxLeft.appendChild(boxReservas);
+        })
+    </script>
+  </body>
+</html>
